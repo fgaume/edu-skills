@@ -4,9 +4,9 @@
 
 Ce skill permet de :
 
-* déterminer son collège de secteur à partir de son adresse de domicile parisien.
-* retrouver les lycées de secteurs d'un collège donné.
-* et à l'inverse, déterminer tous les collèges ayant tel lycée en secteur 1, 2 ou 3.
+- déterminer son collège de secteur à partir de son adresse de domicile parisien.
+- retrouver les lycées de secteurs d'un collège donné.
+- et à l'inverse, déterminer tous les collèges ayant tel lycée en secteur 1, 2 ou 3.
   Il n'est valable que pour l'Académie de Paris.
 
 ## Déterminer son collège de secteur à partir de son adresse de domicile parisien
@@ -18,7 +18,6 @@ Cela passe en 3 étapes :
 ### Step 1 : adresse normalisée vers coordonnées EPSG:2154 RGF93 v1 / Lambert-93 :
 
 Supposons par exemple que l'adresse est "10 rue Servan, 75011", alors on exécute la requête suivante, après avoir URL-encodée l'adresse :
-
 
 ```
 https://capgeo2.paris.fr/datastore/rest/services/GEOCODAGE/Localisateur_Capgeo_Paris/GeocodeServer/findAddressCandidates?outFields=Score&outSR=%7B%22latestWkid%22%3A2154%2C%22wkid%22%3A102110%7D&f=json&SingleLine=10%20rue%20servan%2075011
@@ -59,6 +58,7 @@ La requete renvoie par exemple ce JSON :
 Les coordonnées sont dans la section "candidates/location" (on choisit le score le plus élevé si il y en a plusieurs).
 
 ### Step 2 : convertir les coordonnées en systeme web mercator
+
 La carte scolaire fonctionne en système web mercator (EPSG:3857), il faut donc effectuer la conversion.
 Par exemple en Python:
 
@@ -75,6 +75,7 @@ transformer = Transformer.from_crs(crs_lambert93, crs_web_mercator, always_xy=Tr
 ```
 
 ### Step 3 : la carte scolaire avec les nouvelles coordonnées converties
+
 On peut maintenant appeler l'API de carte scolaire officielle.
 Il faut d'abord (URL-)encoder les coordonnées, par exemple :
 geometry: {"x":265383.7736198207,"y":6251048.42305689}
@@ -126,7 +127,7 @@ Dans l"exemple fourni, la réponse est ALAIN FOURNIER.
 
 ## Liste des lycées de secteurs à partir d'un collège donné
 
-La source de vérité est l'API ARCGIS publique du Rectrorat de Paris.
+La source de vérité est l'API ARCGIS publique du Rectorat de Paris.
 
 Cette liste s'obtient par une simple requete HTTP :
 
@@ -149,7 +150,7 @@ La liste sera triée par secteur croissant.
 
 ## Liste des collèges ayant un lycée donné en secteur 1
 
-La source de vérité est l'API ARCGIS publique du Rectrorat de Paris.
+La source de vérité est l'API ARCGIS publique du Rectorat de Paris.
 
 Cette liste s'obtient par une seimple requete HTTP :
 
