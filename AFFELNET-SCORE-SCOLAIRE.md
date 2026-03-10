@@ -28,6 +28,9 @@ Si on appelle T la variable représentant la note intermédiaire (de l'étape 2 
 - Translater enfin cette variable centrée réduite pour avoir une moyenne de 10 (en ajoutant simplement 10)
 - Multiplier par 10
 Mise en équation, la nouvelle note harmonisée H s’écrit donc comme suit : H = 10 x [10 + (T-µ)/σ]
+Les moyennes et écart-types académiques à prendre en compte sont à récupérer via la requête :
+https://datasets-server.huggingface.co/rows?dataset=fgaume%2Faffelnet-paris-statistiques-champs-disciplinaires&config=default&split=train&offset=0&length=100
+Il faut filtrer les rows avec l'année la plus récente.
 
 ## Étape 4 : pondération des champs disciplinaires
 Fort de nos 7 notes “harmonisées” autour de 100, on applique pour terminer des pondérations différentes selon le champ disciplinaire (5 pour les Mathématiques et le Français, 4 pour les autres).

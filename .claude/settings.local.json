@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:datasets-server.huggingface.co)",
+      "WebFetch(domain:capgeo2.paris.fr)",
+      "Bash(python3 -c \":*)",
+      "Bash(pip3 install pyproj -q)",
+      "WebFetch(domain:services9.arcgis.com)",
+      "WebFetch(domain:www.education.gouv.fr)",
+      "WebSearch"
+    ]
+  }
+}

@@ -85,7 +85,7 @@ geometry=%7B%22x%22%3A265383.7736198207%2C%22y%22%3A6251048.423215006%7D
 Puis l'inserer dans l'url, à la fin, par exemple :
 
 ```
-https://capgeo2.paris.fr/public/rest/services/DASCO/DASCO_Carte_scolaire/MapServer/0/query?f=json&resultOffset=0&resultRecordCount=2000&where=(annee_scol%20IN%20(%272025-2026%27%2C%272024-2025%27))%20and%20(LOWER(annee_scol)%20%3D%20%272025-2026%27)%20AND%20type_etabl%3D%27COL%27&outFields=libelle%2Ctype_etabl&returnZ=true&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryPoint&inSR=102100&outSR=102100&returnGeometry=false&geometry=%7B%22x%22%3A265383.7736198207%2C%22y%22%3A6251048.423215006%7D
+https://capgeo2.paris.fr/public/rest/services/DASCO/DASCO_Carte_scolaire/MapServer/0/query?f=json&resultOffset=0&resultRecordCount=2000&where=annee_scol%3D%272026-2027%27%20AND%20type_etabl%3D%27COL%27&outFields=libelle%2Ctype_etabl&returnZ=true&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryPoint&inSR=102100&outSR=102100&returnGeometry=false&geometry=%7B%22x%22%3A265383.7736198207%2C%22y%22%3A6251048.423215006%7D
 ```
 
 Cette requete va retourner une structure JSON de ce type:
@@ -136,7 +136,7 @@ method: "GET",
 url: "https://services9.arcgis.com/ekT8MJFiVh8nvlV5/arcgis/rest/services/Affectation_Lyc%C3%A9es/FeatureServer/0/query",
 headers: {},
 params: {
-    outFields: "UAI,secteur",
+    outFields: "UAI,Nom,secteur",
     returnGeometry: "false",
     f: "pjson",
     orderByFields: "secteur",
@@ -159,10 +159,10 @@ method: "GET",
 url: "https://services9.arcgis.com/ekT8MJFiVh8nvlV5/arcgis/rest/services/Affectation_Lyc%C3%A9es/FeatureServer/0/query",
 headers: {},
 params: {
-    outFields: "Réseau",
+    outFields: "Réseau,Nom_Tete",
     returnGeometry: "false",
     f: "pjson",
-    orderByFields: "Réseau",
+    orderByFields: "Nom_Tete",
     where: `secteur='1' and UAI='${lyceeSecteur.uai}'`,
 }
 ```
