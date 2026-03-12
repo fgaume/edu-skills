@@ -1,4 +1,4 @@
-# Niveau scolaire des établissments et effectifs des admis au DNB
+# Niveau scolaire et poids des collèges et lycées
 
 ## Description
 Il s'agit ici de déterminer :
