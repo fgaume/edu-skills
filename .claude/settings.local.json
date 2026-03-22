@@ -7,7 +7,10 @@
       "Bash(pip3 install pyproj -q)",
       "WebFetch(domain:services9.arcgis.com)",
       "WebFetch(domain:www.education.gouv.fr)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(hf datasets:*)",
+      "Bash(uv run:*)",
+      "Bash(hf download:*)"
     ]
   }
 }

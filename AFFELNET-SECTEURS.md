@@ -168,3 +168,9 @@ params: {
 ```
 
 où ${lyceeSecteur.uai} représente l'identifiant (UAI) du lycée recherché, et le champ "Réseau" contient l'UAI du collège.
+
+## Historique des secteurs collèges/lycées
+
+L'historique des années précédentes se trouve sur mon dataset publique huggingface : https://huggingface.co/datasets/fgaume/affelnet-paris-secteurs
+
+
